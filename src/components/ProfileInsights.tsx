@@ -13,7 +13,7 @@ const themes: [string, string[]][] = [
 
 export default function ProfileInsights({ entries, habits, goals, styles }: Props) {
   const summary = useMemo(() => {
-    const types = ['感悟', '阅读笔记', '人生经历'].map((kind) => ({ kind, count: entries.filter((entry) => entry.kind === kind).length }));
+    const types = ['小感悟随记', '大事件复盘分析', '看书笔记', '人物 Skill 分析', '思维模型'].map((kind) => ({ kind, count: entries.filter((entry) => entry.kind === kind).length }));
     const keywords = themes.map(([name, words]) => ({ name, count: entries.filter((entry) => words.some((word) => `${entry.title}${entry.body}`.includes(word))).length })).filter((item) => item.count > 0).sort((a, b) => b.count - a.count);
     return { types, keywords };
   }, [entries]);
