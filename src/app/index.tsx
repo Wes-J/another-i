@@ -9,7 +9,7 @@ type Saved = { entries: Entry[]; habits: Habit[]; goals: Goal[]; profile: { type
 const initial: Saved = { entries: starterEntries, habits: starterHabits, goals: starterGoals, profile: { type: 'INFJ', note: '敏锐的观察者，常常先观察和感受，再行动。独处能帮我整理思绪；遇到有意义的事，我愿意投入很深。', values: '自由 / 真诚 / 成长' } };
 const C = { ink: '#18332D', muted: '#74827A', paper: '#F5F3EC', card: '#FFFEFA', line: '#E5E5DC', orange: '#E87A4E', green: '#DCE8DC', lilac: '#EAE6F3', yellow: '#F4EBCF', white: '#FFFFFF' };
 const tabs: { id: Tab; icon: string; label: string }[] = [{ id: 'home', icon: '⌂', label: '首页' }, { id: 'profile', icon: '◉', label: '个人分析' }, { id: 'insights', icon: '✳', label: '感悟' }, { id: 'life', icon: '⌁', label: '生活' }, { id: 'create', icon: '✦', label: 'AI 创作' }];
-const titles: Record<Tab, string> = { home: 'ANOTHER I / HOME', profile: 'ANOTHER I / SELF', insights: 'ANOTHER I / NOTES', life: 'ANOTHER I / LIFE', create: 'ANOTHER I / CREATE' };
+const titles: Record<Tab, string> = { home: 'ANOTHERI / HOME', profile: 'ANOTHERI / SELF', insights: 'ANOTHERI / NOTES', life: 'ANOTHERI / LIFE', create: 'ANOTHERI / CREATE' };
 
 export default function HomeScreen() {
   const [tab, setTab] = useState<Tab>('home');
@@ -55,7 +55,7 @@ export default function HomeScreen() {
   const doneCount = data.habits.filter((h) => h.done).length;
 
   return <SafeAreaView style={styles.safe}><StatusBar barStyle="dark-content" backgroundColor={C.paper} />
-    <View style={styles.top}><Text style={styles.brand}>another <Text style={{ color: C.orange }}>I.</Text></Text><Text style={styles.private}>个人空间 · 私密</Text></View>
+    <View style={styles.top}><Text style={styles.brand}>AnotherI</Text><Text style={styles.private}>个人空间 · 私密</Text></View>
     <View style={styles.crumb}><Text style={styles.crumbText}>{titles[tab]}</Text><Text style={styles.today}>慢慢来，也很好 ☼</Text></View>
     <ScrollView style={styles.scroll} contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
       {tab === 'home' && <>

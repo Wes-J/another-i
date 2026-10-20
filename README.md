@@ -1,4 +1,4 @@
-# Another I
+# AnotherI
 
 一款关于自我理解与生活记录的 Expo + React Native + TypeScript 原型，支持 Android、iOS 和 Web。
 
